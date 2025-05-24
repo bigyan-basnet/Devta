@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/app/current
+permissions:
+  - object: /var/app/current
+    pattern: "**"
+    owner: webapp
+    group: webapp
+    mode: 755
+hooks:
+  AfterInstall:
+    - location: .platform/hooks/postdeploy/01_permissions.sh
+      timeout: 300
+      runas: root
