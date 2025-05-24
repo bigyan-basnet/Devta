@@ -11,6 +11,6 @@ permissions:
     mode: 755
 hooks:
   AfterInstall:
-    - location: .platform/hooks/postdeploy/01_permissions.sh
+    - location: scripts/permissions.sh
       timeout: 300
       runas: root
